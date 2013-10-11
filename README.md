@@ -20,3 +20,9 @@ func main() {
 	fmt.Println(hm)
 }
 ```
+
+This outputs:
+
+```
+bar="456" foo="123"
+```
