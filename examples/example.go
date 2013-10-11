@@ -1,9 +1,3 @@
-go-hashmap
-==========
-
-go-hashmap provides a mechanism to log maps as a string of key/value pairs
-
-```go
 package main
 
 import (
@@ -19,4 +13,3 @@ func main() {
 
 	fmt.Println(hm)
 }
-```
