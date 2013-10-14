@@ -1,7 +1,7 @@
 go-hashmap
 ==========
 
-go-hashmap provides a mechanism to log maps as a string of key/value pairs
+go-hashmap provides a way to log maps as a string of key/value pairs
 
 ```go
 package main
