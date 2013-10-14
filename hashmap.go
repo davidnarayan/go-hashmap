@@ -27,6 +27,15 @@ func (hm *HashMap) Set(key string, value interface{}) {
 	hm.kv[key] = value
 }
 
+func (hm *HashMap) SetFromMap(m map[string]interface{}) {
+	hm.Lock()
+	defer hm.Unlock()
+
+	for key, value := range m {
+		hm.kv[key] = value
+	}
+}
+
 func (hm *HashMap) Contains(key string) bool {
 	hm.Lock()
 	defer hm.Unlock()
@@ -35,7 +44,8 @@ func (hm *HashMap) Contains(key string) bool {
 	return exists
 }
 
-func NewHashMap(m map[string]interface{}) *HashMap {
+func NewHashMap() *HashMap {
+	m := make(map[string]interface{})
 	return &HashMap{kv: m}
 }
 

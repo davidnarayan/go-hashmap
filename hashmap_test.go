@@ -10,7 +10,8 @@ func TestHashMap(t *testing.T) {
 		"baz": 1,
 	}
 
-	hm := NewHashMap(kv)
+	hm := NewHashMap()
+	hm.SetFromMap(kv)
 
 	// String()
 	hmstr := hm.String()
@@ -38,8 +39,9 @@ func TestHashMap(t *testing.T) {
 	}
 
 	// Test that String representation of HashMap replaces spaces in keys
-	m := map[string]interface{}{"test key": "test value"}
-	hmstr = NewHashMap(m).String()
+	h2 := NewHashMap()
+	h2.Set("test key", "test value")
+	hmstr = h2.String()
 
 	if hmstr != `test_key="test value"` {
 		t.Errorf("HashMap.encodeKeys: expected: %q  got: %q",
