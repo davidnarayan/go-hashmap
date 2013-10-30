@@ -12,8 +12,7 @@ import (
 )
 
 func main() {
-	m := make(map[string]interface{})
-	hm := hashmap.NewHashMap(m)
+	hm := hashmap.NewHashMap()
 	hm.Set("foo", "123")
 	hm.Set("bar", "456")
 
